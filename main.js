@@ -48,23 +48,11 @@ playTimerBtn.onclick = () => {
 };
 prevPageBtn.onclick = () => {
   if (pageNumber > 0) {
-    clearTimeout(timer);
-    page.classList.remove('active');
-    pageNumber = pageNumber - 1;
-    page = pages[pageNumber];
-    page.classList.add('active');
-    timeCount = 3;
-    setTimeBackCount();
+    switchPage(-1);
   }
 }
 nextPageBtn.onclick = () => {
   if (pageNumber < pages.length - 1) {
-    clearTimeout(timer);
-    page.classList.remove('active');
-    pageNumber = pageNumber + 1;
-    page = pages[pageNumber];
-    page.classList.add('active');
-    timeCount = 3;
-    setTimeBackCount();
+    switchPage(1);
   }
 }
